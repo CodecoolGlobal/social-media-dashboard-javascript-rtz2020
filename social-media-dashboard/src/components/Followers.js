@@ -2,6 +2,8 @@ import facebook from './../images/facebook.png';
 import instagram from './../images/instagram.jpg';
 import twitter from './../images/twitter.jpg';
 import youtube from './../images/youtube.png';
+import red from './../images/red.png';
+import green from './../images/green.png';
 
 const data = {
     platforms: [
@@ -22,10 +24,84 @@ const data = {
     ],
   };
 
-const Followers = ({platform}) => {
+const Followers = (props) => {
     return (
         <div>
-            <img src={platform} id="imagep"></img>{data.platforms.map((items) => items.facebook.name)}
+            <img src={props.platform} id="imagep"></img>{(() => {
+        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
+          return (
+            data.platforms.map((items) => items.instagram.name)
+          )
+        } else if (props.platform == "/static/media/youtube.145fc780.png") {
+          return (
+            data.platforms.map((items) => items.youtube.name)
+          )
+        } else {
+          return (
+            data.platforms.map((items) => items.twitter.name)
+          )
+        }
+      })()}
+      <br/>
+      {(() => {
+        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
+          return (
+            data.platforms.map((items) => items.instagram.followers)
+          )
+        } else if (props.platform == "/static/media/youtube.145fc780.png") {
+          return (
+            data.platforms.map((items) => items.youtube.followers)
+          )
+        } else if (props.platform == "/static/media/facebook.6c83ee5c.png"){
+          return (
+            data.platforms.map((items) => items.facebook.followers)
+          )
+        } else {
+          return (
+            data.platforms.map((items) => items.twitter.followers)
+          )
+        }
+      })()}
+      <br/>
+      {(() => {
+        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
+          return (
+            "FOLLOWERS"
+          )
+        } else if (props.platform == "/static/media/youtube.145fc780.png") {
+          return (
+            "SUBSCRIBERS"
+          )
+        } else if (props.platform == "/static/media/facebook.6c83ee5c.png"){
+          return (
+            "FOLLOWERS"
+          )
+        } else {
+          return (
+            "FOLLOWERS"
+          )
+        }
+      })()}
+      <br/>
+      {(() => {
+        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
+          return (
+            data.platforms.map((items) => items.instagram.difference) + " Today"
+          )
+        } else if (props.platform == "/static/media/youtube.145fc780.png") {
+          return (
+            data.platforms.map((items) => items.youtube.difference) + " Today"
+          )
+        } else if (props.platform == "/static/media/facebook.6c83ee5c.png"){
+          return (
+            data.platforms.map((items) => items.facebook.difference) + " Today"
+          )
+        } else {
+          return (
+            data.platforms.map((items) => items.twitter.difference) + " Today"
+          )
+        }
+      })()}
         </div>
     )
 }
