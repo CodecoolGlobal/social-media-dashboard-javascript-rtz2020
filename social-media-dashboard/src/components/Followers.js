@@ -1,7 +1,3 @@
-import facebook from './../images/facebook.png';
-import instagram from './../images/instagram.jpg';
-import twitter from './../images/twitter.jpg';
-import youtube from './../images/youtube.png';
 import red from './../images/red.png';
 import green from './../images/green.png';
 
@@ -26,9 +22,12 @@ const data = {
 
 const Followers = (props) => {
     return (
-        <div>
-            <img src={props.platform} id="imagep"></img>{(() => {
-        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
+        <div className = {props.plats}>
+          <div>
+          <img src={props.platform} id="imagep"></img>
+            <div id="names">
+            {(() => {
+        if (props.platform == "/static/media/instagram.80e598d8.png") {
           return (
             data.platforms.map((items) => items.instagram.name)
           )
@@ -42,9 +41,11 @@ const Followers = (props) => {
           )
         }
       })()}
+      </div>
       <br/>
+      <div id="numberfollow">
       {(() => {
-        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
+        if (props.platform == "/static/media/instagram.80e598d8.png") {
           return (
             data.platforms.map((items) => items.instagram.followers)
           )
@@ -62,9 +63,10 @@ const Followers = (props) => {
           )
         }
       })()}
-      <br/>
+      </div>
+      <div id="followerword">
       {(() => {
-        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
+        if (props.platform == "/static/media/instagram.80e598d8.png") {
           return (
             "FOLLOWERS"
           )
@@ -82,27 +84,112 @@ const Followers = (props) => {
           )
         }
       })()}
-      <br/>
+      </div>
+      <div id="modifierarrow">
       {(() => {
-        if (props.platform == "/static/media/instagram.b4ed3377.jpg") {
-          return (
-            data.platforms.map((items) => items.instagram.difference) + " Today"
-          )
+        if (props.platform == "/static/media/instagram.80e598d8.png") {
+          if (data.platforms.map((items) => items.instagram.difference) > 0){
+            return (
+              <img src={green} className="arrow"></img>
+            )
+          }
+          else {
+            return (
+              <img src={red} className="arrow"></img>
+            )
+          }
         } else if (props.platform == "/static/media/youtube.145fc780.png") {
-          return (
-            data.platforms.map((items) => items.youtube.difference) + " Today"
-          )
+          if (data.platforms.map((items) => items.youtube.difference) > 0){
+            return (
+              <img src={green} className="arrow"></img>
+            )
+          }
+          else {
+            return (
+              <img src={red} className="arrow"></img>
+            )
+          }
         } else if (props.platform == "/static/media/facebook.6c83ee5c.png"){
-          return (
-            data.platforms.map((items) => items.facebook.difference) + " Today"
-          )
+          if (data.platforms.map((items) => items.facebook.difference) > 0){
+            return (
+              <img src={green} className="arrow"></img>
+            )
+          }
+          else {
+            return (
+              <img src={red} className="arrow"></img>
+            )
+          }
         } else {
-          return (
-            data.platforms.map((items) => items.twitter.difference) + " Today"
-          )
+          if (data.platforms.map((items) => items.twitter.difference) > 0){
+            return (
+              <img src={green} className="arrow"></img>
+            )
+          }
+          else {
+            return (
+              <img src={red} className="arrow"></img>
+            )
+          }
         }
       })()}
-        </div>
+      {(() => {
+        if (props.platform == "/static/media/instagram.80e598d8.png") {
+          if (data.platforms.map((items) => items.instagram.difference) > 0){
+            return (
+              <div className = 'greencolor'>
+              {data.platforms.map((items) => items.instagram.difference)}
+              </div>
+            )
+          } else {
+          return (
+            <div className = 'redcolor'>
+              {data.platforms.map((items) => items.instagram.difference) + " Today"}
+            </div>
+          )}}
+        else if (props.platform == "/static/media/youtube.145fc780.png") {
+            if (data.platforms.map((items) => items.youtube.difference) > 0){
+              return (
+                <div className = 'greencolor'>
+                {data.platforms.map((items) => items.youtube.difference) + " Today"}
+                </div>
+              )
+            } else {
+            return (
+              <div className = 'redcolor'>
+                {data.platforms.map((items) => items.youtube.difference) + " Today"}
+              </div>
+            )}}
+        else if (props.platform == "/static/media/facebook.6c83ee5c.png") {
+              if (data.platforms.map((items) => items.facebook.difference) > 0){
+                return (
+                  <div className = 'greencolor'>
+                  {data.platforms.map((items) => items.facebook.difference) + " Today"}
+                  </div>
+                )
+              } else {
+              return (
+                <div className = 'redcolor'>
+                  {data.platforms.map((items) => items.facebook.difference) + " Today"}
+                </div>
+              )}}
+        else {
+                if (data.platforms.map((items) => items.twitter.difference) > 0){
+                  return (
+                    <div className = 'greencolor'>
+                    {data.platforms.map((items) => items.twitter.difference) + " Today"}
+                    </div>
+                  )
+                } else {
+                return (
+                  <div className = 'redcolor'>
+                    {data.platforms.map((items) => items.twitter.difference) + " Today"}
+                  </div>
+                )}}
+          })()}
+          </div>
+          </div>
+    </div>
     )
 }
 

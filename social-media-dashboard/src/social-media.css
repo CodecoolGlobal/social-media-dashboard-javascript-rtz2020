@@ -1,4 +1,236 @@
 #imagep{
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
+}
+
+.arrow{
+    height: 20px;
+    width: 20px;
+    margin-top: 5%;
+}
+
+.imagel{
+    height: 25px;
+    width: 25px;
+}
+
+.redcolor{
+    color: hsl(356, 69%, 56%);
+    display:inline-block;
+}
+
+.greencolor{
+    color: hsl(163, 72%, 41%);
+    display:inline-block;
+}
+
+p{
+    color: hsl(228, 34%, 66%);
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 0px;
+}
+
+h1{
+  text-align: left;
+  margin-left: 10%;
+  margin-bottom: 0px;
+}
+
+h2{
+  text-align: left;
+  margin-left: 10%;
+  margin-bottom: 0px;
+}
+
+.facebook{
+    width: 16%;
+    margin-top: 2%;
+    display:inline-block;
+    border-top: 4px solid hsl(208, 92%, 53%);
+    background-color: hsl(228, 28%, 20%);
+    left: 10%;
+    margin-left:5%;
+    line-height: 250%;
+    border-radius: 5px;
+}
+
+.twitter{
+    width: 16%;
+    display:inline-block;
+    margin-left:5%;
+    border-top: 4px solid hsl(203, 89%, 53%);
+    background-color: hsl(228, 28%, 20%);
+    line-height: 250%;
+    border-radius: 5px;
+}
+
+.instagram{
+    width: 16%;
+    display:inline-block;
+    margin-left:5%;
+    background-image: linear-gradient(to left, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    padding: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    line-height: 250%;
+    border-radius: 5px;
+}
+
+.instagram > div { background: hsl(228, 28%, 20%); }
+
+.youtube{
+    width: 16%;
+    display:inline-block;
+    margin-left:5%;
+    border-top: 4px solid hsl(348, 97%, 39%);
+    background-color: hsl(228, 28%, 20%);
+    line-height: 250%;
+    border-radius: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left:10px;
+  }
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-image: linear-gradient(to left, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+.slider.round {
+    border-radius: 34px;
+  }
+  
+.slider.round:before {
+    border-radius: 50%;
+  }
+
+.App{
+    background-color: hsl(230, 17%, 14%);
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+}
+
+body{
+    background-color: rgb(15, 15, 15);
+}
+
+#names{
+    color: hsl(228, 34%, 66%);
+    display: inline-block;
+    margin-top: 10%;
+}
+
+#toggle{
+  color: hsl(228, 34%, 66%);
+  text-align: right;
+  margin-right: 15%;
+  font-weight: bold;
+}
+
+input{
+  margin-top: 40%;
+}
+
+#numberfollow{
+  font-size:55px;
+  margin-top: 10%;
+}
+
+#followerword{
+  font-weight:lighter;
+  color: hsl(228, 34%, 66%);
+}
+
+#modifierarrow{
+  margin-bottom: 0%;
+}
+
+#uppertext{
+  margin-top: 5%;
+  display:inline-block;
+  margin-bottom: 10%;
+  margin-right: 17%;
+  color: hsl(228, 34%, 66%);
+  font-size: small;
+}
+
+.upperimage{
+  display:inline-block;
+  margin-left: 17%;
+  margin-bottom: 10%;
+}
+
+#loweramount{
+  display:inline-block;
+  margin-right: 15%;
+  font-size: 30px;
+}
+
+#modifieramount{
+  display:inline-block;
+  margin-left: 15%;
+}
+
+.downlikes{
+  width: 16%;
+  margin-top: 2%;
+  display:inline-block;
+  background-color: hsl(228, 28%, 20%);
+  left: 10%;
+  margin-left:5%;
+  line-height: 250%;
+  border-radius: 5px;
 }
